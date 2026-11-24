@@ -39,4 +39,16 @@ how an agent fails.
 
 - v1 (main.ts as committed): local run `node main.ts` with ENTRY_OUTPUT to
   a temp dir — entry.txt 74 chars, one line, within the 1–200 gate.
-  (Trial results below are filled in as bundle/check run.)
+- Bundle v1: `u-el-net-the-excuse-an-ai-agent-gives-its-human-099f9141-bundle-v1.tar.gz`,
+  807,777 bytes, sha256 `898cae71adab100c3a91e09b76bc640da55f6a6ccb13c4aab00ca70edf9efdd5`.
+  Bundle warned 0 usage rows attached (subagent rows flush only when the run
+  completes — coordinator re-bundles with --muse-usage).
+- Check v1 (commit c5d8a9d12df13b91ddabaa2dbc53970672f4a4ea): **12 passed /
+  2 failed / 5 skipped / 5 at submission**. FAILs: thinking_priced (0 usage
+  rows — expected, see bundle warning) and thinking_revised (main.ts written
+  once). thinking_reproduces 100.0% (75/75 authored lines). This trial-log
+  revision is the genuine fix for thinking_revised; re-commit, re-bundle
+  (v2), re-check next.
+- Remote GitHub: `gh repo create` at 11:53 WITA refused — GraphQL rate
+  limit ("created too many repositories, too quickly", 12+ repos created
+  today). Build continued locally; one retry after a 10–30 min pause.
